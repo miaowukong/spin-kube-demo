@@ -1,9 +1,9 @@
-FROM golang
+FROM golang:1.10-alpine3.7 
 
-ADD . /go/src/spinnaker.io/demo/k8s-demo
+ADD . /go/src/github.com/miaowukong/k8s-demo
 
-RUN go install spinnaker.io/demo/k8s-demo
+RUN go install github.com/miaowukong/k8s-demo
 
-ADD ./content /content
+ADD ./content  /content
 
-ENTRYPOINT /go/bin/k8s-demo
+ENTRYPOINT ["/go/bin/k8s-demo"]
